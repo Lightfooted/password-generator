@@ -19,13 +19,13 @@ function generatePassword() {
     storage += nos;
   }
 
-  var lowerLetter = confirm("Would you like to add lowercased letters?");
-  if (lowerLetter){
+  var lowerLetters = confirm("Would you like to add lowercased letters?");
+  if (lowerLetters){
     storage += lowerLetter;
   }
 
-  var upperLetter = confirm("Would you like to add uppercased letters?");
-  if (upperLetter){
+  var upperLetters = confirm("Would you like to add uppercased letters?");
+  if (upperLetters){
     storage += upperLetter;
   }
 
