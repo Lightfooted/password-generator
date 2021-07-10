@@ -1,5 +1,4 @@
 function generatePassword() {
-
   // Array
   var nos = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
   var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "{", "}", "|", "{", "}", "[", "]", ":", "<", ">", ".", "?"];
@@ -16,22 +15,22 @@ function generatePassword() {
   };
   var nosNumber = confirm("Would you like to add numbers?");
   if (nosNumber){
-    storage += nos;
+    storage = storage.concat(nos);
   }
 
   var lowerLetters = confirm("Would you like to add lowercased letters?");
   if (lowerLetters){
-    storage += lowerLetter;
+    storage = storage.concat(lowerLetter)
   }
 
   var upperLetters = confirm("Would you like to add uppercased letters?");
   if (upperLetters){
-    storage += upperLetter;
+    storage  = storage.concat(upperLetter);
   }
 
   var specialCharacter = confirm("Would you like to add special characters?");
   if (specialCharacter){
-    storage += special;
+    storage = storage.concat(special)
   }
   console.log(storage)
   for (var i = 0; i < passwordLength; i++) {
@@ -40,16 +39,17 @@ function generatePassword() {
   console.log("password",password)
   return password
 }
-  var generateBtn = document.querySelector("#generate");
 
-  // Write Password
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+var generateBtn = document.querySelector("#generate");
 
-    passwordText.value = password;
+// Write Password
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
   
 }
-  // addEventListener Click
 
-    generateBtn.addEventListener ("click", writePassword)
+// addEventListener Click
+generateBtn.addEventListener ("click", writePassword)
