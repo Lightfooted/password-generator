@@ -1,19 +1,3 @@
-// Assignment Code
-
-var generateBtn = document.querySelector("#generate");
-
-generateBtn.addEventListener("click", writePassword);
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-
 function generatePassword() {
 
   // Array
@@ -45,11 +29,24 @@ function generatePassword() {
     storage += upperLetter;
   }
 
-  var specialCharacter = confirm("Would you like to add special characters?")
+  var specialCharacter = confirm("Would you like to add special characters?");
   if (specialCharacter){
     storage += special;
   }
   for (var i = 0; i < passwordLength; i++) {
     password = storage[Math.floor(Math.random() * storage.length)]
   }
-};
+}
+  var generateBtn = document.querySelector("#generate");
+
+  // Write password to the #password input
+  function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
+  
+}
+  // Add event listener to generate button
+
+    generateBtn.addEventListener ("click", writePassword)
